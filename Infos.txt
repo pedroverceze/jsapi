@@ -1,0 +1,49 @@
+/**
+ * Rota / Recurso
+ */
+
+ /**
+  * Métodos HTTP
+  * 
+  * GET: Buscar informações
+  * POST: Criar informação
+  * PUT: Alterar informação
+  * DELETE: Deletar informação
+ */
+
+ /**
+   * Query Params: Parametros nomeados enviados na rota após o "?" (filtros, paginação)
+   * Route Params: Utilizados para identificar recursos
+   * Request body: Corpo da requisição, utilizado para criar ou alterar recursos
+ */
+ 
+ /**
+ * Para indicar ao express que estou usando JSON
+ *app.use(express.json())
+ */
+ 
+ /**
+ --BANCO
+ 
+ Formas de instalar
+ - Driver: SELECT * FROM USERS
+ - Query builder: table('users').select('*').where()
+ */
+ 
+ configuraçao para definir local de criação das migrations:
+ development: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/db.sqlite'
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true,
+  },
+ 
+ Comando para criar Migration:
+ npx migrate:make nome_da_migration
+ 
+ comando para executar migrations:
+ npx knex migrate:latest
